@@ -1,0 +1,26 @@
+ aaa @azkstrony.pl	http://azkstrony.pl/surveys/Example/?uid=aaa  
+bbb@azkstrony.pl 	 http://azkstrony.pl/surveys/Example/?uid= b b b 
+
+ccc  @azkstrony.pl  	 http://azkstrony.pl/surveys/Example/?uid=ccc 
+ ddd@azkstrony.pl 	 http://azkstrony.pl/surveys/Example/?uid= ddd
+
+ eee @azkstrony.pl	http://azkstrony.pl/surveys/Example/?uid = eee 
+fff @ azkstrony.pl 	 http://azkstrony.pl/surveys/Example/?uid= f ff 
+
+ ggg  @azkstrony. pl  	 http://azkstrony.pl/surveys/Example/?uid=ggg 
+h h h @azkstrony.pl 	 http://azkstrony.pl/surveys/Example/? uid = hhh
+
+
+
+ iii @azkstrony.pl	  http://azkstrony.pl/surveys/Example/?uid=ii i 
+jjj@azkstrony.pl 	 http://azkstrony.pl/surveys/Example/?uid= jj j 
+
+kkk  @azkstrony.pl  	 http://azkstrony.pl/surveys/Example/?uid=  k  k  k   
+  lll@azkstrony.pl 	 http://azkstrony.pl/surveys/Example/?uid= lll 
+
+
+ m mm @azkstrony.pl	http://azkstrony.pl/surveys/Example/?uid=mm m  
+nn n@azkstrony.pl 	 http://azkstrony.pl/surveys/Example/?uid= n nn
+ooo@azkstrony.pl 	 htt p:/ /azk stro ny.p l/su rveys /Exam ple /?uid= o o o
+
+
