@@ -1,6 +1,6 @@
 <?php
 if (count($_FILES)) {
-  $target_dir = "../uploads/";
+  $target_dir = "../uploadfiles/";
 
 //  echo "_FILES:<br />";
 //  print_r($_FILES);

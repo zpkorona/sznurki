@@ -1,5 +1,5 @@
 <?php
-$target_dir = "../uploads/";
+$target_dir = "../uploadfiles/";
 
 print_r($_FILES);
 echo "<br />-------------------------------<br />";
