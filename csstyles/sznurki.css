@@ -1,0 +1,115 @@
+/*kolory
+#f3fbf3 - jasny, tło
+#a0d0a0 - ciemny, pasek
+#d6f5d6 - jasne tło w menu
+#e6f0e6 - pasek w nagłówkach
+*/
+
+
+* {
+  box-sizing: border-box;
+  font-family: normal 0.9em Verdana, Geneva, sans-serif;
+/*
+  border-color: #47d147;//b3ffb3;//66ffcc
+  background-color: #d6f5d6;//e6ffe6;//ccffee
+  :hover color: #004d00;//004d00//004d33
+*/
+}
+
+body {
+  background: #f3fbf3 url("../mediafiles/AZetKa.gif");
+  margin: 0px;
+  font-size: 0.9em;
+}
+
+.form-table {
+  display: table;
+  padding-left: 1em;
+}
+.form-row {
+  display: table-row;
+}
+.form-cell {
+  display: table-cell;
+  padding: 0.5em;
+}
+.form-row > div.form-cell {
+  font-style: italic;
+}
+
+
+input, textarea {
+  font-size: 0.9em;
+}
+
+input[type=email] {
+  width: 20em;
+}
+button {
+  background: #d6f5d6;
+}
+
+.play-button {
+  margin: 0px 5px;
+}
+.play-button:hover {
+  cursor: default;
+}
+.large-button {
+  width: 10em;
+  height: 4em;
+}
+
+#cover-banner {
+  display: none;
+  position: fixed;
+  right: 5px;
+  top: 5px;
+  left: 5px;
+  bottom: 5px;
+  padding: 2em;
+  overflow: auto;
+  background-color: #d6f5d6;
+  border: 10px solid green;
+  opacity: 0.95;
+  z-index: 10;
+}
+#cover-banner-close {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  color: green;
+  font-weight: bold;
+  font-size: 150%;
+  /*border: 1px solid green;*/
+  font-weight: bold;
+}
+#cover-banner-close:hover {
+  cursor: pointer;
+}
+#certificate-box {
+  display: none;
+  margin-top: 50px;
+  }
+#certificate-box > textarea {
+  margin: 0em 2em;
+  vertical-align: top;
+}
+#certificateCurr-button,
+#certificateAll-button {
+  display: none;
+}
+#cover-banner-letter,
+#cover-banner-sent {
+  display: none;
+  margin: 50px;
+  padding: 1em 1em 2em 2em;
+  background-color: white;
+}
+
+#php-output {
+  display: none;
+}

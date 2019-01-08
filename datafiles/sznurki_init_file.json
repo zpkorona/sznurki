@@ -1,0 +1,19 @@
+{
+  "sender" : "azetka@azkstrony.pl",
+  "response" : "zwrotnie@adres.pl",
+  "backup" : "cichcem@adres.pl",
+  "subject" : "TEMAT LISTU NP: Badanie: Test produktów pod prysznic.",
+  "beginning" : ["MIEJSCE NA PIERWSZĄ CZĘŚĆ LISTU NP:\n",
+                 "'Szanowny Respondencie\n\n",
+                 "Na początku chcieliśmy bardzo podziękować za udział w naszym badaniu.\n\n",
+                 "Teraz chcielibyśmy zadać kilkaset pytań na temat pewnego produktu.\n\n",
+                 "Proszę udzielać spontanicznych odpowiedzi.\n",
+                 "Najważniejsza jest szczera opinia. \n",
+                 "Oczywiście Pani odpowiedzi pozostaną anonimowe.\n\n",
+                 "Aby odpowiedzieć na pytania proszę kliknąć na link poniżej:"],
+  "ending" : ["MIEJSCE NA DRUGĄ CZĘŚĆ LISTU NP:\n",
+              "W przypadku problemów prosimy o kontakt z ankieterem, który Panią rekrutował.\n\n",
+              "Bardzo dziękujemy za udział w badaniu!!!\n",
+              "Pozdrawiamy,\n\n",
+              "Departament Analiz i Dewastacji Terenu"]
+}

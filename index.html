@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Linki</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Expires" content="0">
+  <!--meta http-equiv="Pragma" content="no-cache"-->
+  <!--meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate"-->
+  <!--meta http-equiv="Cache-Control" content="post-check=0, pre-check=0"-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Survey links sender">
+  <meta name="keywords" content="ankiety, wprowadzanie danych, capi, wapi, cati, przetwarzanie danych, zestawy tabelaryczne, analiza danych, testy istotności, badania rynku, badania opinii, programowanie, strony internetowe, SPSS, C++, Java Script, HTML, Php">
+  <meta name="author" content="AZetKa studio">
+
+  <link rel="shortcut icon" href="./mediafiles/azk_std.ico">
+  <link rel="stylesheet" type="text/css" href="./csstyles/azk_std.css">
+  <link rel="stylesheet" type="text/css" href="./csstyles/sznurki.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+  <script language="JavaScript" type="text/javascript" src="./jscripts/sznurki.js"></script>
+</head>
+
+<body ng-app="ngApp">
+
+<div class="azk-canvas" ng-controller="ngCtrl">
+  <h4>Strona do rozsyłania linków do badania</h4>
+
+  <div class="form-table">
+    <div class="form-row">
+      <div class="form-cell" title="Musi być właściwy dla używanego serwera">
+        Nadawca:
+      </div>
+      <div class="form-cell">
+        <input type="email" ng-model="sender" placeholder="adres@nadawcy" title="Musi być właściwy dla używanego serwera">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-cell" title="Odpowiedź ma być kierowana pod ten adres">
+        Odpowiedź:
+      </div>
+      <div class="form-cell">
+        <input type="email" ng-model="response" placeholder="adres@zwrotny" title="Odpowiedź ma być kierowana pod ten adres">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-cell" title="Ukryta kopia listu zostanie przesłana pod ten adres">
+        Kopia:
+      </div>
+      <div class="form-cell">
+        <input type="email" ng-model="backup" placeholder="adres@kopii.listu" title="Ukryta kopia listu zostanie przesłana pod ten adres">
+      </div>
+      <div class="form-cell">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-cell" title="Adres respondenta pod który zostanie wyslany list">
+        Respondent:
+      </div>
+      <div class="form-cell">
+        <input type="email" ng-model="respondent" placeholder="adres@responenta" title="Adres respondenta pod który zostanie wyslany list">
+        <span style="display:inline-flex;vertical-align:bottom;margin-left:2em;margin-right:2em;">
+          <img src="./mediafiles/play_first.gif" class="play-button" title="Pierwszy respondent"  ng-click="firstResp();"/>
+          <img src="./mediafiles/play_prev.gif"  class="play-button" title="Poprzedni respondent" ng-click="prevResp();"/>
+          <span class="play-button" style="border:1px solid green;" title="Aktualny respondent, POKAŻ LIST" ng-click="showMail();">&nbsp;{{respIndex + 1}}&nbsp;</span>
+          <img src="./mediafiles/play_next.gif" class="play-button" title="Następny respondent" ng-click="nextResp();"/>
+          <img src="./mediafiles/play_last.gif" class="play-button" title="Ostatni respondent" ng-click="lastResp();"/>
+        </span>
+        <button style="width:9em;" ng-click="showMail()">Pokaż list</button>
+      </div>
+      <div class="form-cell">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-cell" title="Temat listu">
+        Temat:
+      </div>
+      <div class="form-cell">
+        <input type="text" ng-model="subject" placeholder="TEMAT LISTU" style="width:46em;" title="Temat listu">
+      </div>
+      <div class="form-cell">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-cell" style="vertical-align:top;" title="Pierwsza część listu">
+        Wstęp:
+      </div>
+      <div class="form-cell" style="vertical-align:top;">
+       <textarea cols="80" rows="10" ng-model="beginning" placeholder="MIEJSCE NA PIERWSZĄ CZĘŚĆ LISTU" title="Pierwsza część listu">
+       </textarea>
+      </div>
+      <div class="form-cell" style="text-align:center;">
+        <button class="large-button" ng-click="sendCurrMail()" style="color:red;">Wyślij aktualny list</button><br /><br /><br />
+        <button class="large-button" ng-click="sendAllMails()" style="color:red;">Wyślij wszystkie listy</button>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-cell" style="vertical-align:top;" title="Przesyłany link do ankiety">
+        Link:
+      </div>
+      <div class="form-cell" style="vertical-align:top;" title="Przesyłany link do ankiety">
+        <input type="url" ng-model="linka" placeholder="" style="width:46em">
+      </div>
+      <div class="form-cell">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-cell" style="vertical-align:top;" title="Druga część listu">
+        Zakończenie:
+      </div>
+      <div class="form-cell" style="vertical-align:top;">
+        <textarea cols="80" rows="10" ng-model="ending" placeholder="MIEJSCE NA DRUGĄ CZĘŚĆ LISTU" title="Druga część listu">
+        </textarea>
+      </div>
+      <div class="form-cell">
+        {{kontrolaLotu}}
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-cell">
+        <em>Plik z linkami:</em>
+      </div>
+      <div class="form-cell">
+        <input type="file" name="fileToUpload" id="link-file" size="50"><span id="link-file-info"></span>
+      </div>
+    <div class="form-cell">
+      <button style="width:9em;" ng-click="readFileIntoLinkTable()">Zastosuj plik</button>
+    </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-cell" style="vertical-align:top;">
+        <em>Strefa wrzutu:</em>
+      </div>
+      <div class="form-cell" style="vertical-align:top;">
+        <textarea id="drop-box1" cols="80" rows="3" ng-model="dropbox" placeholder="Ctrl-C, Ctrl-V w formacie aaa@azkstrony.pl[tab]http://azkstrony.pl/surveys/Example/?uid=aaa">
+        </textarea>
+      </div>
+      <div class="form-cell" style="vertical-align:bottom;">
+        <button style="width:9em;" ng-click="readDropboxIntoLinkTable()">Zastosuj wrzut</button>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:table;margin-left:5em;">
+    <div style="display:table-row;border:1px solid darkgrey;">
+      <div style="display:table-cell;padding:0em 1em;">
+        &nbsp;
+      </div>
+      <div style="display:table-cell;padding:0em 1em;">
+        Respondent
+      </div>
+      <div style="display:table-cell;padding:0em 1em;">
+        Link
+      </div>
+      <div style="display:table-cell;">
+        <input type="number" hidden ng-model="linkoLimit">
+      </div>
+    </div>
+    <div style="display:table-row;border:1px solid darkgrey;" ng-repeat="linko in linkTable | limitTo:linkoLimit">
+      <div style="display:table-cell;padding:0em 0.5em;border:1px solid darkgrey;background-color:white;">
+        {{$index + 1}}
+      </div>
+      <div style="display:table-cell;padding:0em 0.5em;border:1px solid darkgrey;background-color:white;">
+        {{linko.resp}}
+      </div>
+      <div style="display:table-cell;padding:0em 0.5em;border:1px solid darkgrey;background-color:white;">
+        {{linko.link}}
+      </div>
+    </div>
+  </div>
+
+  <span id="monitor"></span>
+
+  <div id="cover-banner">
+    <div id="cover-banner-close" onclick="document.getElementById('cover-banner').style.display='none'">X</div>
+    <div id="certificate-box">
+      Proszę wprowadzić certyfikat:
+      <textarea ng-model="certificate" rows="3" cols="40"></textarea>
+      <button id="certificateCurr-button" ng-click="applyCertificateCurr()">ZASTOSUJ</button>
+      <button id="certificateAll-button" ng-click="applyCertificateAll()">ZASTOSUJ</button>
+    </div>
+    <div id="cover-banner-letter">
+      miejsce na wyświetlany list
+    </div>
+    <div id="cover-banner-sent">
+      <strong>LISTA WYSYŁANYCH LISTÓW:</strong><br />
+    </div>
+  </div>
+
+</div>
+
+<iframe name="php-output" id="php-output">
+</iframe>
+
+</body>
+</html>
