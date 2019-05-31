@@ -150,7 +150,7 @@ aplikacja.controller('ngCtrl', function($scope, $http, $timeout) {
         var formData = new FormData();
         formData.append('fileToUpload', fileToUpload);
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "./phpscripts/zaladujFormData.php", true);
+        xhr.open("POST", "./php/zaladujFormData.php", true);
         xhr.send(formData);
         //document.getElementById("link-file-info").innerHTML = xhr.responseText;
       //a to by angular się obudził
@@ -172,14 +172,14 @@ aplikacja.controller('ngCtrl', function($scope, $http, $timeout) {
       formData.append('fileToUpload', fileToUpload);
       linkFileInfo.innerHTML = "<em>plik '" + fileToUpload.name + "'</em>";
       var xhr = new XMLHttpRequest();
-      xhr.open("POST", "./phpscripts/zaladuj.php", true);
+      xhr.open("POST", "./php/zaladuj.php", true);
       xhr.send(formData);
-  //      $http.post("./phpscripts/zaladuj.php", formData)
+  //      $http.post("./php/zaladuj.php", formData)
   //           .then(function(response){linkFileInfo.innerHTML += "<em> - </em>";},
   //                 function(response){linkFileInfo.innerHTML += "<strong> ??? </strong>";});
       linkFileInfo.innerHTML += " <em>wczytywanie</em>";
       $timeout(function () {
-                 $http.get("./uploads/" + fileToUpload.name)
+                 $http.get("./upload/" + fileToUpload.name)
                       .then(function (response) {//sukces
                               $scope.makeLinkTable(response.data.replace(/ /g, "").replace(/\n+/g, "\n"));
                               linkFileInfo.innerHTML = "<em>plik '" + fileToUpload.name + "' wczytany</em>";
@@ -204,7 +204,7 @@ aplikacja.controller('ngCtrl', function($scope, $http, $timeout) {
       linkFileName = document.getElementById("link-file").files[0].name;
       document.getElementById("link-file-info").innerHTML = "<em>wczytywanie</em>";
       $timeout(function () {
-                 $http.get("./uploads/" + linkFileName)
+                 $http.get("./upload/" + linkFileName)
                       .then(function (response) {//sukces
                               $scope.makeLinkTable(response.data.replace(/ /g, "").replace(/\n+/g, "\n"));
                               document.getElementById("link-file-info").innerHTML = "<em>wczytany</em>";
@@ -241,7 +241,7 @@ aplikacja.controller('ngCtrl', function($scope, $http, $timeout) {
   $scope.sendMail = function (sender, response, backup, respondent, subject, message, certificate) {
     $http({
       method: "POST",
-      url: "./phpscripts/wyslij_list.php",
+      url: "./php/wyslij_list.php",
       data: "sender="      + sender + "&" +
             "response="    + response + "&" +
             "backup="      + backup + "&" +

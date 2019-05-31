@@ -1,5 +1,5 @@
 <?php
-$target_dir = "../uploadfiles/";
+$target_dir = "../upload/";
 
 print_r($_FILES);
 echo "<br />-------------------------------<br />";
@@ -23,7 +23,7 @@ foreach ($_FILES as $fileToUpload => $fileArray) {
       echo "Plik ". basename( $_FILES[$fileToUpload]['name']). " został załadowany. <br />";
     }
     else {
-      echo "Nie udało sie załadowac pliku. <br />";
+      echo "Nie udało sie załadować pliku. <br />";
     }
   }//else
   echo "<br />-------------------------------<br />";

@@ -12,11 +12,11 @@
   <meta name="keywords" content="ankiety, wprowadzanie danych, capi, wapi, cati, przetwarzanie danych, zestawy tabelaryczne, analiza danych, testy istotności, badania rynku, badania opinii, programowanie, strony internetowe, SPSS, C++, Java Script, HTML, Php">
   <meta name="author" content="AZetKa studio">
 
-  <link rel="shortcut icon" href="./mediafiles/azk_std.ico">
-  <link rel="stylesheet" type="text/css" href="./csstyles/azk_std.css">
-  <link rel="stylesheet" type="text/css" href="./csstyles/sznurki.css">
+  <link rel="shortcut icon" href="./img/azk_std.ico">
+  <link rel="stylesheet" type="text/css" href="./css/azk_std.css">
+  <link rel="stylesheet" type="text/css" href="./css/sznurki.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
-  <script language="JavaScript" type="text/javascript" src="./jscripts/sznurki.js"></script>
+  <script language="JavaScript" type="text/javascript" src="./js/sznurki.js"></script>
 </head>
 
 <body ng-app="ngApp">
@@ -61,11 +61,11 @@
       <div class="form-cell">
         <input type="email" ng-model="respondent" placeholder="adres@responenta" title="Adres respondenta pod który zostanie wyslany list">
         <span style="display:inline-flex;vertical-align:bottom;margin-left:2em;margin-right:2em;">
-          <img src="./mediafiles/play_first.gif" class="play-button" title="Pierwszy respondent"  ng-click="firstResp();"/>
-          <img src="./mediafiles/play_prev.gif"  class="play-button" title="Poprzedni respondent" ng-click="prevResp();"/>
+          <img src="./img/play_first.gif" class="play-button" title="Pierwszy respondent"  ng-click="firstResp();"/>
+          <img src="./img/play_prev.gif"  class="play-button" title="Poprzedni respondent" ng-click="prevResp();"/>
           <span class="play-button" style="border:1px solid green;" title="Aktualny respondent, POKAŻ LIST" ng-click="showMail();">&nbsp;{{respIndex + 1}}&nbsp;</span>
-          <img src="./mediafiles/play_next.gif" class="play-button" title="Następny respondent" ng-click="nextResp();"/>
-          <img src="./mediafiles/play_last.gif" class="play-button" title="Ostatni respondent" ng-click="lastResp();"/>
+          <img src="./img/play_next.gif" class="play-button" title="Następny respondent" ng-click="nextResp();"/>
+          <img src="./img/play_last.gif" class="play-button" title="Ostatni respondent" ng-click="lastResp();"/>
         </span>
         <button style="width:9em;" ng-click="showMail()">Pokaż list</button>
       </div>

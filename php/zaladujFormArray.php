@@ -1,6 +1,6 @@
 <?php
 if (count($_FILES)) {
-  $target_dir = "../uploadfiles/";
+  $target_dir = "../upload/";
 
 //  echo "_FILES:<br />";
 //  print_r($_FILES);
@@ -39,7 +39,7 @@ Array ( [name] => Array ( [0] => mailmail.log
         echo "Plik ". basename($fileName). " został załadowany. <br />";
       }
       else {
-        echo "Nie udało sie załadowac pliku. <br />";
+        echo "Nie udało sie załadować pliku. <br />";
       }
     }//else
     echo "<br />-------------------------------<br />";
