@@ -51,7 +51,7 @@ aplikacja.controller('ngCtrl', function($scope, $http, $timeout) {
   $scope.dropbox    = "";
   $scope.linkoLimit = 1000;
 
-  $http.get("./datafiles/sznurki_init_file.json")
+  $http.get("./data/sznurki_init_file.json")
        .then(function (response) {
                $scope.sender    = (response.data.hasOwnProperty("sender"))?    response.data.sender : "blabla";
                $scope.response  = (response.data.hasOwnProperty("response"))?  response.data.response : "";
@@ -161,6 +161,7 @@ aplikacja.controller('ngCtrl', function($scope, $http, $timeout) {
         100);
     }
   };
+
 /*
   $scope.readFileIntoLinkTable = function () {
     //$scope.ending = "readFile::";

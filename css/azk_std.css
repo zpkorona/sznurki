@@ -16,10 +16,10 @@
 }
 
 body {
-  background: #f3fbf3 url("../mediafiles/AZetKa.gif");
+  background: #f3fbf3 url("../img/AZetKa.gif");
 /*
   background-color: #f3fbf3;
-  background-image: url("../mediafiles/AZetKa.gif");
+  background-image: url("../img/AZetKa.gif");
   background-size: 20%;
 */
   font: normal 1em Verdana, Geneva, sans-serif;
@@ -86,39 +86,39 @@ h3.subtitle {
   background-color: #d6f5d6;/*#a0d0a0;/*#47d147;*/
 }
 .list-a {
-  list-style-image: url('../_pics_/list_a.gif');
+  list-style-image: url('../img/list_a.gif');
 }
 .list-g {
-  list-style-image: url('../_pics_/list_g.gif');
+  list-style-image: url('../img/list_g.gif');
 }
 .list-p {
   margin-top: 0px;
-  list-style-image: url('../_pics_/list_p.gif');
+  list-style-image: url('../img/list_p.gif');
 }
 .list-t {
   margin-top: 0px;
-  list-style-image: url('../_pics_/list_t.gif');
+  list-style-image: url('../img/list_t.gif');
 }
 .list-v {
   margin-top: 0px;
-  list-style-image: url('../_pics_/list_v.gif');
+  list-style-image: url('../img/list_v.gif');
 }
 .list-arrow {
   margin-top: 0px;
-  list-style-image: url('../_pics_/list_arrow12.gif');
+  list-style-image: url('../img/list_arrow12.gif');
 }
 .link {
   text-decoration: none;
   font-style: italic;
   color: #004000;
-  background: #d6f5d6 url(../_pics_/link.gif) no-repeat 100%;
+  background: #d6f5d6 url(../img/link.gif) no-repeat 100%;
   padding-right: 16px;
 }
 .iframe-link {
   text-decoration: none;
   font-style: italic;
   color: #004000;
-  background: #d6f5d6 url(../_pics_/window16.gif) no-repeat 100%;
+  background: #d6f5d6 url(../img/window16.gif) no-repeat 100%;
   padding-right: 16px;
 }
 
