@@ -38,10 +38,12 @@ aplikacja.controller('ngCtrl', function($scope, $http, $timeout) {
   $scope.subject   = "";
   $scope.respIndex = 0;
   if ($scope.linkTable.length) {
+    window.console.log("ngCtrl:" + $scope.linkTable.length);
     $scope.respondent = $scope.linkTable[$scope.respIndex].resp;
     $scope.linka      = $scope.linkTable[$scope.respIndex].link;
   }
   else {
+    window.console.log("ngCtrl: -");
     $scope.respondent = "ADRES RESPONDENTA";
     $scope.linka      = "LINK DO BADANIA DLA REPONDENTA";
   }
